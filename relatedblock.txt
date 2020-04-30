@@ -1,0 +1,9 @@
+[related-news]
+<div class="fullstory-col--block fullstory-popular mb-4">
+	<div class="fullstory-col--title">
+		<h4 class="subtitle is-5 title-b txtcolor-gray txt-bold--700 txt-uppercase mb-3 position-relative">Похожее на {title}</h4></div>
+	<div class="fullstory-col--content d-flex flex-wrap justify-content-between">
+		{related-news}
+	</div>
+</div>
+[/related-news]

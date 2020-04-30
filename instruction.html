@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Kino - адаптивный кино шаблон для DLE 13.x (младшие версии по запросу)</title>
+		<link href="./instruction/assets/style.css?v2" rel="stylesheet">
+		<link href="./instruction/assets/prism.css" rel="stylesheet">
+		<style>
+			nav {
+				padding: 0 15px;
+				background-color: #9e7dd3;
+				height: 40px;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 9;
+				box-shadow: 8px 0 10px 0 rgba(0,0,0,.05);
+			}
+
+			nav ul {
+				padding-left: 0;
+				margin-bottom: 0;
+				list-style: none;
+				text-align: center;
+			}
+
+			nav ul li {
+				margin: 0;
+				display: inline-block;
+			}
+
+			nav a {
+				color: hsla(0,0%,100%,.7);
+				padding: 0 12px;
+				font-size: 13px;
+				line-height: 40px;
+				transition: all .2s ease-in;
+				position: relative;
+				display: block;
+			}
+
+			nav a:hover {
+				text-decoration: none;
+				color: #fff;
+				background-color: hsla(0,0%,100%,.1);
+			}
+			
+			nav ul li.active a {
+				color: #fff;
+				background-color: hsla(0,0%,100%,.18);
+			}
+			
+			nav ul ul {
+			    display: none;
+			    position: absolute;
+			    top: 100%;
+			}
+			
+			nav ul li:hover > ul {
+			    display: block;
+				background: #8669b5;
+				text-align: left;
+			}
+			
+			nav ul ul li {
+			    min-width: 150px;
+			    float: none;
+			    display: list-item;
+			    position: relative;
+				z-index: 9999999;
+			}
+		</style>
+	</head>
+	<body>
+
+		<header class="header text-center" style="color: #fff;padding-top: 40px;padding-bottom: 0;">
+			<div class="container-md">
+				<h1 style="color: #ffbc00;font-size: 3.5rem;">Кино шаблон Kino</h1>
+				<p class="lead" style="font-weight: 300;margin: 0rem 0 2rem 0;line-height: 1.4;color: #434343;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;font-size: 2.2rem;">Адаптивный кино шаблон для DLE 13.x (младшие версии по запросу)</p>
+				<div>
+					<span class="badge badge-primary">version: 1.0</span>
+					<span class="badge badge-danger">Dle: 13.0 - 13.3</span>
+					<span class="badge badge-secondary">charset: UTF-8</span>
+				</div>
+			</div>
+		</header>
+		
+		<section class="section" style="padding-top: 0;" id="descrFilter">
+			<div class="container">
+				<div class="features">
+					<ul class="features__block">
+						<li>Кроссбраузерная поддержка. Chrome, Firefox, Opera, IE9+</li>
+						<li>Крутой адаптивный дизайн.</li>
+						<li>SEO оптимизированный код.</li>
+						<li>Удобное разделение контента на главной.</li>
+						<li>Ajax переключение вида кратких новостей с запоминанием выбора.</li>
+						<li>Трейлер в ajax окне в кратких новостях.</li>
+						<li>Ajax закладки (данная функция доступна даже гостям, после регистрации закладки перенесутся в их профиль).</li>
+						<li>Подсчет колличество закладок для гостей и пользователей.</li>
+						<li>Вывод закладок в удобном окне.</li>
+						<li>Мгновенное удаление и добавление закладок в окно для вывода.</li>
+						<li>Крутая фишка как у GOOGLE - Голосовой поиск для DLE.</li>
+						<li>Вывод популярных запросов на сайте в удобном блоке.</li>
+					</ul>
+					<ul class="features__block">
+						<li>Вывод добавленных коллекций в удобном окне.</li>
+						<li>Стильный прогресс бар в стиле youtube.</li>
+						<li>Удобное фиксирование шапки при скроллинге: когда скроллим вниз - скрывается, вверх - появляется.</li>
+						<li>Большое выпадающее меню в шапке, где можно разместить все жанры, года и тп.</li>
+						<li>Большой слайдер на главной с максимальной информацией о фильме.</li>
+						<li>Оригинальный слайдер в категориях - его фон меняется из постеров.</li>
+						<li>Готовое оформление под модуль фильтра от LazyDev.</li>
+						<li>Готовое оформление под модуль коллекций от TeraMoune.</li>
+						<li>Рейтинг в виде звезд с выводом общей оценки по 10 бальной шкале.</li>
+						<li>Рейтинг (интерес пользователей к фильму).</li>
+						<li>На постерах есть кнопки добавления в закладки, кнопка трейлера, оценка пользователей, интерес пользователей. Также на постерах при наведении есть иконка, наведя на которую появляется описание фильма</li>
+					</ul>
+					<ul class="features__block">
+						<li>Человеко понятные даты.</li>
+						<li>Вывод последних обновлений на сайте в удобном окне (перейдя по ссылке все обновления пользователь попадает на страницу со всем обновлениями группированными по датам).</li>
+						<li>На главной для сериалов используется блок с обновлениями по датам.</li>
+						<li>Карусель на главной используется ajax табы</li>
+						<li>Вывод колличества фильмов в вашей базе.</li>
+						<li>Контент на главной использует ajax табы для вывода по категориям фильмов.</li>
+						<li>В боковой панели сделан вывод случайного фильма на ajax.</li>
+						<li>Место для вывода seo описания как на главной.</li>
+						<li>Очень круто сделаны рейтинга для кинориума,кинопоиска и imdb, вам нужно лишь добавить значения в доп. поля и шаблон автоматически сделает красивую шкалу на основе этих цифр.</li>
+						<li>Подгрузка новостей по нажатию кнопки на Ajax.</li>
+						<li>Вывод блока с просмотренными фильмами.</li>
+						<li>Вывод рейтинга пользователя в минипрофиле, если рейтинг отрицательный никнэйм и диаграмма рейтинга окрашивается в красный цвет, если положительный то в зеленый.</li>
+					</ul>
+					<ul class="features__block">
+						<li>Страница с просмотром фильма сделана максимально удобной.</li>
+						<li>Оформление блока для вывода актеров (использовать модуль или иной способ вывода).</li>
+						<li>Встроена крутая-адаптивная галлерея fancybox.</li>
+						<li>Списки для гостей и пользователей (с помощью которых можно организовать списки по типу: буду смотреть, смотрю и тп)</li>
+						<li>Каждому фильму можно задать свой фон через дополнительное поле, либо можно использовать статичную картинку.</li>
+						<li>Для вывода плееров используются вкладки.</li>
+						<li>Включение/выключение света для удобного просмотра фильма.</li>
+						<li>Вывод попурярных фильмов из просмариваемой категории,как в самой категории так и в полной новости.</li>
+						<li>Оформление для модуля LinkEnso  - модуль кольцевой перелинковки от LazyDev.</li>
+						<li>Если не загружен аватар, то показывается аватарка с случайным цветом, в которую подставляется первая буква имени комментатора.</li>
+						<li>Если рейтинг комментария отрицательный, диаграмма рейтинга окрашивается в красный цвет, а сам комментарий скрывается под спойлер.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+		<section class="section">
+			<div class="container">
+				<header class="section-header" id="installFilter">
+					<h2>Установка Шаблона</h2>
+				</header>
+				
+				<input id="dle13" type="radio" name="tabs" checked>
+
+
+				<div class="row" id="installdle13" style="margin-top:20px;">
+					<header class="section-header" style="margin: 0 auto;">
+						<span class="title-inner">Установка для <span style="background: #ffbc00;padding: 2px;color: #000;">DataLife Engine 13.0 и выше</span></span>
+					</header>
+					<ul class="step-text">
+						<li>
+							<h5>Шаг первый</h5>
+							<p>Загрузите папку <span class="badge badge-danger">engine</span> на свой сервер.</p>
+						</li>
+						<li>
+							<h5>Шаг второй</h5>
+							<p>Загрузите папку с шаблоном <span class="badge badge-danger">kino-dark или kino-light</span> на свой сервер.</p>
+						</li>
+						<li>
+							<h5>Шаг третий</h5>
+							<p>Установить через систему плагинов XML файлы из папки <span class="badge badge-danger">plugins</span>.</p>
+						</li>
+						<li>
+							<h5>Шаг четвертый</h5>
+							<p>Создайте дополнительные поля (или загрузите готовый файл <span class="badge badge-info">xfields.txt</span> в папку <span class="badge badge-danger">engine/data</span>)</p>
+							<ul>
+								<li>
+									Название поля - poster </br>
+									Описание поля - Постер </br>
+									Тип поля - Загружаемое изображение
+								</li>
+								<li>
+									Название поля - sliderbg </br>
+									Описание поля - Задний фон слайдера </br>
+									Тип поля - Загружаемое изображение
+								</li>
+								<li>
+									Название поля - screens </br>
+									Описание поля - Скриншоты </br>
+									Тип поля - Загружаемая галерея изображений </br>
+									Установите галочку - Создать уменьшенную копию </br>
+									Размеры уменьшенной копии - 300 
+								</li>
+								<li>
+									Название поля - reasonedit </br>
+									Описание поля - Причина редактирования/обновления </br>
+									Тип поля - Одна строка
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5>Шаг Пятый</h5>
+							<p>Откройте файл <span class="badge badge-info">.htaccess</span> найдите строку <span class="badge badge-success">RewriteEngine On</span> и споле нее вставьте следующее (необходимо для работы модулей):.</p>
+							<div class="col-md-12"> 
+								<pre>
+									<code class="language-markup">
+RewriteRule ^mylists/(.*?)/page/([0-9]+)(/?)+$ index.php?do=mylists&listname=$1&cstart=$2 [L]
+RewriteRule ^mylists/page/([0-9]+)(/?)+$ index.php?do=mylists&listname=0&cstart=$1 [L]
+RewriteRule ^mylists/(.*?)(/?)+$ index.php?do=mylists&listname=$1 [L]
+RewriteRule ^mylists(/?)+$ index.php?do=mylists&listname=0 [L]
+
+RewriteRule ^collections/([0-9]+)-(.*)/page/([0-9]+)(/?)+$ index.php?do=collections&id=$1&cstart=$3 [L]
+RewriteRule ^collections/([0-9]+)-(.*)(/?)+$ index.php?do=collections&id=$1 [L]
+RewriteRule ^collections/favorites(/?)+$ index.php?do=collections&action=favorites [L]
+RewriteRule ^collections/favorites/page/([0-9]+)(/?)+$ index.php?do=collections&action=favorites&cstart=$1 [L]
+RewriteRule ^collections/page/([0-9]+)(/?)+$ index.php?do=collections&cstart=$1 [L]
+RewriteRule ^collections(/?)$ index.php?do=collections [L]
+
+RewriteRule ^notice(/?)+$ index.php?do=notice [L]
+									</code>
+								</pre>
+							</div>
+						</li>
+						<li>
+							<h5>Шаг шестой</h5>
+							<p>Загрузить файл <span class="badge badge-danger">install_notion.php</span> на свой сервер и запустить его.</p>
+						</li>
+						<li>
+							<h5>Шаг Седьмой</h5>
+							<p>Создайте дополнительную страницу с такими параметрами:</p>
+							<ul>
+								<li>
+									Название: - tops </br>
+									Описание: - Топ кино (Либо любое другое) </br> 
+									Текст страницы: - Топ кино по мнению пользователей (Либо любое другое) </br> 
+									Использовать шаблон: - mod-tplfiles/vendor/top100
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5>Шаг Восьмой</h5>
+							<p>Откройте файл <span class="badge badge-info">/engine/classes/js/dle_js.js</span> найдите и закомментируйте</p>
+							<div class="col-md-12"> 
+								<pre>
+									<code class="language-markup">
+function doRate(a,c){ShowLoading("");$.get(dle_root+"engine/ajax/controller.php?mod=rating",{go_rate:a,news_id:c,skin:dle_skin,user_hash:dle_login_hash},function(a){HideLoading("");if(a.success){var b=a.rating;b=b.replace(/&lt;/g,"<");b=b.replace(/&gt;/g,">");b=b.replace(/&amp;/g,"&");$("#ratig-layer-"+c).html(b);$("#vote-num-id-"+c).html(a.votenum);$("#likes-id-"+c).html(a.likes);$("#dislikes-id-"+c).html(a.dislikes)}else a.error&&DLEalert(a.errorinfo,dle_info)},"json")}
+
+function doCommentsRate(a,c){ShowLoading("");$.get(dle_root+"engine/ajax/controller.php?mod=ratingcomments",{go_rate:a,c_id:c,skin:dle_skin,user_hash:dle_login_hash},function(a){HideLoading("");if(a.success){var b=a.rating;b=b.replace(/&lt;/g,"<");b=b.replace(/&gt;/g,">");b=b.replace(/&amp;/g,"&");$("#comments-ratig-layer-"+c).html(b);$("#comments-vote-num-id-"+c).html(a.votenum);$("#comments-likes-id-"+c).html(a.likes);$("#comments-dislikes-id-"+c).html(a.dislikes)}else a.error&&DLEalert(a.errorinfo,dle_info)},"json")}function ajax_cancel_reply(){$("#dlefastreplycomments").hide("blind",{},1400)}
+									</code>
+								</pre>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<header class="section-header" id="newFilter">
+					<h2>Работа с шаблоном</h2>
+					<hr>
+					<p class="lead">Структура файлов шаблона</p>
+				</header>
+				<ul class="step-text">
+					<li>
+							<h5>Описание</h5>
+							<p>Описание файлов в папке <span class="badge badge-danger">mod-tplfiles</span></p>
+							<p>Папка <span class="badge badge-danger">vendor</span> содержит tpl файлы блоков верстки таких как:</p>
+							<ul>
+								<li>
+									<span class="badge badge-info">carousel.tpl</span> - вывод карусели на главной и категориях </br>
+									<span class="badge badge-info">footer.tpl</span> - подвал шаблона </br>
+									<span class="badge badge-info">header.tpl</span> - шапка шаблона </br>
+									<span class="badge badge-info">main.tpl</span> - центральный блок с контентом </br>
+									<span class="badge badge-info">main-info.tpl</span> - вывод блока с информацией количестве новостей в базе сайта </br>
+									<span class="badge badge-info">search.tpl</span> - блок с поиском и популярными запросами </br>
+									<span class="badge badge-info">second-menu.tpl</span> - дополнительное меню </br>
+									<span class="badge badge-info">sidebar.tpl</span> - боковая панель </br>
+									<span class="badge badge-info">slider.tpl</span> - большой слайдер на главной </br>
+									<span class="badge badge-info">top100.tpl</span> - вывод топов новостей </br>
+								</li>
+							</ul>
+							<p>Папка <span class="badge badge-danger">custom</span> содержит tpl файлы шаблоном подключаемых для вывода в <span class="badge badge-success">{custom}</span>:</p>
+							<ul>
+								<li>
+									<span class="badge badge-info">custom-backgroundcarousel.tpl</span> - вывод новостей в большой слайдере каруселью </br>
+									<span class="badge badge-info">custom-backgroundslider.tpl</span> - вывод новостей в большом слайдере </br>
+									<span class="badge badge-info">custom-carousel.tpl</span> - вывод новостей в карусели на главной и категориях </br>
+									<span class="badge badge-info">custom-favitem.tpl</span> - вывод новостей в блоке с закладками</br>
+									<span class="badge badge-info">custom-notice.tpl</span> - вывод новостей в блоке просмотренного </br>
+									<span class="badge badge-info">custom-random.tpl</span> - вывод новостей в блоке случайного фильма </br>
+									<span class="badge badge-info">custom-searchpopular.tpl</span> - вывод новостей в блоке популярных запросов </br>
+									<span class="badge badge-info">custom-top10item.tpl</span> - вывод новостей в блоке топ 10 </br>
+									<span class="badge badge-info">custom-top100item.tpl</span> - вывод новостей в блоке топ 100 </br>
+									<span class="badge badge-info">custom-update.tpl</span> - вывод новостей в блоке обновлений на главной </br>
+									<span class="badge badge-info">custom-widgetpopular.tpl</span> - вывод новостей в боковой панели блок популярное </br>
+									<span class="badge badge-info">custom-widgetpopularfilm.tpl</span> -  вывод новостей в боковой панели блок популярные фильмы </br>
+									<span class="badge badge-info">custom-widgetsoon.tpl</span> - вывод новостей в блоке скоро </br>
+								</li>
+							</ul>
+						</li>
+					<li>
+						<h5>Важно</h5>
+						<p>Шаблон использует для вывода информации <span class="badge badge-success">{custom}</span>. В данном тэге в шаблоне везде прописано отключение кэша, для уменьшее нагрузки рекомендуется включить кэш ( более подробнее Вы можете ознакомится в онлайн документации к CMS DLE - <span class="badge badge-danger">https://dle-news.ru/extras/online/index.html?startnews.html</span> )</p>
+					</li>
+					<li>
+						<h5>Разная информация</h5>
+						<p>В настройках DLE укажите:</p>
+						<ul>
+							<li>
+								Настройка параметров скрипта / Новости: Количество новостей на страницу  - 15  </br>
+								Настройка параметров скрипта / Новости: Количество статей на страницу в результатах поиска - 15  </br>
+							 	Настройка параметров скрипта / Новости: Количество похожих новостей - 6 (если используете стандартный вывод похожих новостей)</br>  
+							 	Настройка параметров скрипта / Новости: Тип рейтинга публикаций - Оценка </br>
+							 	Настройка параметров скрипта / Комментарии: Тип рейтинга комментариев - 'Нравится' или 'Не нравится'
+							</li>
+						</ul>
+						<p>Для ускорения работы шаблона по максимуму создавайте минифицированные файлы:</p>
+						<ul>
+							<li>
+								js -   http://beautifytools.com/javascript-minifier.php </br>
+								css -  http://beautifytools.com/css-minifier.php
+							</li>
+							<li>Настройте кэширование</li>
+							<li>Более подробнее прочтите: https://dle-news.ru/blog/1723-uvelichivaem-skorost-zagruzki-sayta.html</li>
+							<li>Более подробнее прочтите: https://8dle.ru/blog-8d/6584-v-pogone-za-pagespeed-optimizaciya-dle-nachalo.html</li>
+							<li>Более подробнее прочтите: https://pafnuty.name/others/133-pagespeed-2.html</li>
+						</ul>
+						<p><span class="badge badge-danger">Для модуля DLE Filter v1.2.4 - модуль фильтра для DataLife Engine от LazyDev же в шаблоне все подключено, данный шаг пропустите.</span></p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section class="section">
+			<div class="container">
+				<header class="section-header" id="workFilter">
+					<h2>Модули в шаблоне</h2>
+					<hr>
+					<p class="lead">Инструкция по настройке модулей (ВАЖНО В ШАБЛОНЕ УЖЕ ВСЕ ПРОПИСАНО, НИЖЕ ПОЯСНЯЕТСЯ ТОЛЬКО ПРЕДНАЗНАЧЕНИЕ И ИСПОЛЬЗОВАНИЕ МОДУЛЕЙ И ХАКОВ)</p>
+				</header>
+				<ul class="step-text">
+						<li>
+							<h5>Хак "Общая оценка рейтинга"</h5>
+							<p>Данный хак выводит общую оценку рейтинга тэгом <span class="badge badge-info">{rating_nums}</span>.</p>
+						</li>
+						<li>
+							<h5>Модуль "Закладки для пользователей и гостей"</h5>
+							<p>Модуль, который заменяет стандартный обработчик кнопки добавления в закладки.</p>
+							<ul>
+								<li>Закладками могут пользоваться гости. Адрес страница закладок такой же как у зарегистрированных: example.com/favorites/</li>
+								<li>Возможность ограничить количество закладок для каждой из групп пользователей</li>
+								<li>При включенном кешировании в списке коротких новостей отметка не убирается</li>
+								<li>Более гибкая возможность настройки шаблона</li>
+								<li>Отзывчивый интерфейс. При клике на кнопку она тут же меняет свой вид.</li>
+							</ul>
+							<p>Изминения параметров происходит в файле <span class="badge badge-danger">engine/mods/favorites/config.php</span></p>
+						</li>
+						<li>
+							<h5>Хак "Выбор количества новостей"</h5>
+							<p>Этот хак позволит посетителям самим выбирать, какое количество новостей будет отображаться на страницах сайта..</p>
+							<p>Настройка колличества вывода новостей производится в файле <span class="badge badge-danger">engine/modules/news_number.php</span>. Важно первое вхождение числа новостей должно строго совпадать с парметром в <span class="badge badge-danger">Настройка параметров скрипта / Новости: Количество новостей на страницу</span>. </p>
+
+						</li>
+						<li>
+							<h5>Хак "Вывод общего количества новостей"</h5>
+							<p>Данный хак выводит общее количество новостей на сайте тэгом <span class="badge badge-info">{allcount}</span>.</p>
+						</li>
+						<li>
+							<h5>Хак "Топ новостей в категории"</h5>
+							<p>Данный хак выводит топ новостей в той категории которую просматривается пользователь <span class="badge badge-info">{custom thiscat ...}</span>.</p>
+						</li>
+						<li>
+							<h5>Модуль "YouWatch"</h5>
+							<p>Данный модуль выводит новости которые уже просматрел пользователь.</p>
+							<ul>
+								<li>
+									<p>Для подключения модуля в  <span class="badge badge-danger">fullstory.tpl</span> прописывается <span class="badge badge-info">{include file="engine/modules/notice.php?newsid={news-id}"}</span></p>
+								</li>
+								<li>
+									<p>Что бы задать Лимит (по умолчанию 5 новостей) прописать <span class="badge badge-info">{include file="engine/modules/notice.php?newsid={news-id}&limit=10"}</span></p>
+									<p>Где 10 - количество новостей которые будут сохранятся.</p>
+								</li>
+								<li>
+									<p>Для того что вывести то что смотрел пользователь в нужном месте вставить <span class="badge badge-info">[senpainoticeme]{include file="engine/modules/show.notice.php"}[/senpainoticeme]</span></p>
+									<p>Теги :</p>
+									<p><span class="badge badge-info">[senpainoticeme]*текст*[/senpainoticeme]</span> - выведут текст внутри них если есть новость которую посещал юзер, иначе скроет текст.</p>
+									<p><span class="badge badge-info">[not_senpainoticeme]*текст*[/not_senpainoticeme]</span> - выведут текст внутри них если нету новостей которую посещал юзер, иначе скроет текст.</p>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5>Модуль "Collections" (Разработчик TeraMoune)</h5>
+							<p>Подробную информацию по данному модулю Вы можете получить на странице модуля <span class="badge badge-danger">https://github.com/TeraMoune/Collections-DLE</span></p>
+						</li>
+						<li>
+							<h5>Хак "Быстрый поиск"</h5>
+							<p>Хак через систему плагинов заменяет стандартный быстрый поиск на более функциональный. Шаблон для вывода <span class="badge badge-info">search_popup.tpl</span></p>
+						</li>
+						<li>
+							<h5>Модуль "Cписки для пользователей и гостей"</h5>
+							<p>Модуль позволяет организовать на своем сайте систему списков по типу: буду смотреть,смотрел и тп</p>
+							<p>Откройте в браузере ссылку <span class="badge badge-info">вашсайт/admin.php?mod=mylists</span> — так вы попадете в настройки модуля. Чтобы вывести ссылку на модуль в меню «Сторонние модули» нажмите кнопку внизу справа в настройках модуля.</p>
+							<ul>
+								<li>Ссылка на все закладки: /mylists/</li>
+								<li>Ссылка на конкретный раздел: /mylists/:URL_раздела_указанный_в_настройках</li>
+								<li>Вывод кол-ва новостей в конкретном разделе: добавьте к необходиимому div или span - <span class="badge badge-info">class="mylists-count" data-id="2"</span>, * Вместо 2 укажите id нужного вам подраздела, * Чтобы вывести кол-во всех новостей в каждом подразделе укажите data-id="0"</li>
+								<li>Вывод блока, для быстрого внесения новости в подраздел: <span class="badge badge-info">class="mylists-switch" data-id="{news-id}"</span> * Вставьте данный код в нужном месте в шаблонах <span class="badge badge-info">fullstory.tpl и shortstory.tpl</span>, * {news-id} это тег выводящий id новости, но если вы хотите вывести блок переключения для конкретной новости в любом месте, то пишете data-id="ID_новости"</li>
+								<li>Вывод тега h1 в любом шаблоне: <span class="badge badge-info">[aviable=mylists]{mylists-h1}[/aviable]</span></li>
+								<li>Вывод переключателя разделов в любом шаблоне: <span class="badge badge-info">[aviable=mylists]{mylists-tabs}[/aviable]</span></li>
+								<li><span class="badge badge-danger">ВАЖНО: ЗАЙДИТЕ В НАСТРОЙКИ МОДУЛЯ, НАЙДИТЕ ПОЛЕ - СПИСОК РАЗДЕЛОВ И ПРОПИШИТЕ СЛЕДУЮЩЕЕ, ЕСЛИ НЕ ПРОПИСАНО:</span> </br>
+									1|Смотрю|smotrju </br>
+									2|Буду смотреть|budu-smotret </br>
+									3|Уже смотрел|uzhe-smotrel </br>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5>Модуль "Архив обновлений"</h5>
+							<p>Модуль последних обновлений/редактирований новостей. Выводит последние отредактированные(обновленные) статьи в нужной части и разделах сайта, при необходимости, с возможностью "уведомления" для пользователей, были ли обновление за время отсутствия которые он мог пропустить (с возможностью подсчитать кол-во обновлений). 
+Присутствует своя страница модуля - архив последних обновлений, все обновление за указанный период времени.</p>
+							<ul>
+								<li> В нужном месте подключить модуль:  <span class="badge badge-info">{include file="engine/modules/mymod_NotiON.php"}</span></li>
+								<li> Вход в админ панель: <span class="badge badge-info">http://site/admin.php?mod=mymod_NotiON</span></li>
+								<li>
+									Файлы шаблонов: </br>
+									<span class="badge badge-info">Noti_m.tpl</span> -  - в файле произвдитсья основаня настройка формления окна перечисления статей. Имеет основной тег - <span class="badge badge-success">{tag_notiMain}</span> отвечает за вывод статей следующего файла шаблона.</br>
+									<span class="badge badge-info">Noti_ml.tpl</span> - файл офрмления статей. Имеет теги:</br>
+<span class="badge badge-success">{tag_editdate}</span> - неформатированная дата обновления (для скрипта уведомлений)</br>
+<span class="badge badge-success">{tag_reason}</span> - прична обновления\редактирования (см. в адмичасти)</br>
+<span class="badge badge-success">{tag_title}</span> - заголовок обновления\редактирования (см. в адмичасти)</br>
+<span class="badge badge-success">{tag_link}</span> - ссылка на статью</br>
+<span class="badge badge-success">{tag_date}</span> - дата изменения статьи </br>
+									<span class="badge badge-info">Noti_full.tpl</span> - шаблон отдельной траницы модуля - архива обновлений\редактирований. Имеет один осовоной тег -  <span class="badge badge-success">{tag_noti}</span> отвечает за вывод статей следующего файла шаблона  </br>
+									<span class="badge badge-info">Noti_fl.tpl</span> -  - шаблон оформления статей на сранице архива. Имеет теги: </br>
+<span class="badge badge-success">{tag_reason1}</span> - прична обновления\редактирования (см. в адмичасти) </br>
+<span class="badge badge-success">{tag_title1}</span> - заголовок обновления\редактирования (см. в адмичасти) </br>
+<span class="badge badge-success">{tag_link1}</span> - ссылка на статью </br>
+<span class="badge badge-success">{tag_date}</span> - дата изменения статьи
+
+								</li>
+							</ul>
+						</li>	
+						<li>
+							<h5>Модуль "LinkEnso - кольцевая перелинковка" (Разработчик LazyDev)</h5>
+							<p>Подробную информацию по данному модулю Вы можете получить на странице модуля <span class="badge badge-danger">https://readme.lazydev.pro/linkenso.html</span></p>
+							<p><span class="badge badge-danger">Важно если Вы не будете использовать модуль, а обойдетесь и стандартными средствами в файле шаблона </span> <span class="badge badge-info">fullstory.tpl</span> найти: <span class="badge badge-info">{include file="engine/lazydev/linkenso/index.php?newsId={news-id}&news=6&date=old&link=1&scan=same"}</span> и заменить на тот блок который находится в файле <span class="badge badge-info">relatedblock.txt</span></p>
+
+
+						</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<header class="section-header" >
+					<h2>Контактные данные:</h2>
+					<hr>
+					<p class="lead">Обо всех ошибках или возникающих вопросах писать по контактам ниже, спасибо что выбрали нас.</p>
+				</header>
+				<div class="row">
+					<p><span class="badge badge-info">E-mail:</span> <b>webkubikc@gmail.com</b></p>
+					<br><hr>
+					<p><span class="badge badge-info">SKYPE:</span> <b>webkubikc</b></p> 
+					<br><hr>
+					<p><span class="badge badge-info">Telegram:</span> <b>webkubikc</b></p>
+				</div>
+			</div>
+		</section>
+		
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="row align-items-center">
+
+					<div class="col-md-9">
+						<div class="nav justify-content-center justify-content-md-start">
+							
+						</div>
+					</div>
+
+					<div class="col-md-3 text-center text-md-right">
+						<a href="#">© webkubikc</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>
